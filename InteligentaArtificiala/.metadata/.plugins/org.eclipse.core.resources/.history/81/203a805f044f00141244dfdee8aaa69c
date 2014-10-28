@@ -1,0 +1,44 @@
+package recursivitate;
+
+public class mystery {
+	public static int Mystery(int a, int b) {
+		if (b == 0)
+			return 0;
+		if (b % 2 == 0)
+			return Mystery(a + a, b / 2);
+		return Mystery(a + a, b / 2) + a;
+	}
+
+	public static int factorialrec(int n) {
+		// StopWatch timer = new StopWatch();
+		if (n == 0)
+			return 1;
+		return n * factorialrec(n - 1);
+	}
+
+	public static int factorialnerec(int n) {
+		int x, fact = 1;
+		for (x = n; x > 1; x--)
+			fact *= x;
+
+		return fact;
+	}
+
+	public static int Fibonaci(int f) {
+		if (f <= 1)
+			return f;
+		else
+			return Fibonaci(f - 1) + Fibonaci(f - 2);
+	}
+
+	public static void main(String[] args) {
+
+		// System.out.println(Mystery(2, 25));
+		// System.out.println(Mystery(3, 11));
+		System.out.println(factorialrec(4));
+		System.out.println(factorialnerec(3));
+		System.out.println(Fibonaci(2));
+
+	}
+
+}
